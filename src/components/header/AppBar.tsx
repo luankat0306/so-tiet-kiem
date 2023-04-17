@@ -9,7 +9,8 @@ import {
 import Image from "next/image";
 import React from "react";
 import { Location, Notification } from "iconsax-react";
-import ButtonIcon from "@/components/button/ButtonIcon";
+import IconButton from "../button/IconButton";
+
 const navMenu = ["Trang chủ", "Giới thiệu", "So sánh", "Liên hệ"];
 
 const AppBar = () => {
@@ -19,7 +20,12 @@ const AppBar = () => {
     </Button>
   ));
   return (
-    <AppBarMui elevation={2} color="default" position="static">
+    <Box
+      sx={{
+        boxShadow: "0px 3px 4px rgba(0, 0, 0, 0.1)",
+        height: "50px",
+      }}
+    >
       <Container
         sx={{
           paddingY: 1,
@@ -31,7 +37,7 @@ const AppBar = () => {
           alignItems="center"
         >
           <Stack direction="row" spacing={2} alignItems="center">
-            <Image height={36} width={164} src="logo.svg" alt="Logo" />
+            {/* <Image height={36} width={164} src="logo.svg" alt="Logo" /> */}
             {renderNavMenu}
           </Stack>
           <Box flex={1} />
@@ -55,13 +61,13 @@ const AppBar = () => {
               <Button color="inherit">Đăng ký tài khoản</Button>
             </Stack>
             <Stack direction="row" spacing={1} alignItems="center">
-              <ButtonIcon icon={Location} />
-              <ButtonIcon icon={Notification} />
+              <IconButton icon={Location} />
+              <IconButton icon={Notification} />
             </Stack>
           </Stack>
         </Stack>
       </Container>
-    </AppBarMui>
+    </Box>
   );
 };
 

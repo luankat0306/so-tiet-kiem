@@ -43,6 +43,14 @@ export default function ThemeConfig({ children }: ThemeConfigProps) {
             },
           ],
         },
+        MuiCard: {
+          styleOverrides: {
+            root: {
+              boxShadow: "0px 1px 20px rgba(0, 0, 0, 0.15)",
+              borderRadius: 12,
+            },
+          },
+        },
       },
     }),
     []
